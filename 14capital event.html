@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Country Capital Lookup</title>
+</head>
+<body>
+    <h1>Country Capital Lookup</h1>
+    <label for="countrySelect">Select a country:</label>
+    <select id="countrySelect" onchange="displayCapital()">
+        <option value="none">Select</option>
+        <option value="usa">United States</option>
+        <option value="canada">Canada</option>
+        <option value="uk">United Kingdom</option>
+        <!-- Add more countries as needed -->
+    </select>
+    <br>
+    <label for="capitalTextbox">Capital:</label>
+    <input type="text" id="capitalTextbox" readonly>
+    
+    <script>
+        function displayCapital() {
+            var countrySelect = document.getElementById("countrySelect");
+            var capitalTextbox = document.getElementById("capitalTextbox");
+            var selectedCountry = countrySelect.value;
+            
+            switch (selectedCountry) {
+                case "usa":
+                    capitalTextbox.value = "Washington, D.C.";
+                    break;
+                case "canada":
+                    capitalTextbox.value = "Ottawa";
+                    break;
+                case "uk":
+                    capitalTextbox.value = "London";
+                    break;
+                // Add cases for more countries and capitals
+                default:
+                    capitalTextbox.value = "";
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TextBox Styling</title>
+    <style>
+        .highlight {
+            color: rgb(209, 245, 78); /* Change text color */
+            background-color: rgb(0, 0, 0); /* Change background color */
+        }
+    </style>
+</head>
+<body>
+    <h1>TextBox Styling Example</h1>
+    <label for="myTextBox">Type something:</label>
+    <input type="text" id="myTextBox" onfocus="highlightTextbox(true)" onblur="highlightTextbox(false)">
+    
+    <script>
+        function highlightTextbox(isFocused) {
+            var textBox = document.getElementById("myTextBox");
+            
+            if (isFocused) {
+                textBox.classList.add("highlight"); // Add the "highlight" class
+            } else {
+                textBox.classList.remove("highlight"); // Remove the "highlight" class
+            }
+        }
+    </script>
+</body>
+</html>
